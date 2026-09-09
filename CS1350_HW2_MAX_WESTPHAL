@@ -1,0 +1,295 @@
+#unit 1
+my_info = {
+"name": "Maximilian",
+"age": 18,
+"major": "Computer Science"
+}
+
+
+menu = {
+"Burger": 5.99,
+"Pizza": 8.99,
+"Fries": 2.49,
+"Soda": 1.99
+}
+
+
+course_credits = {
+"CS1350": 3,
+"MATH1400": 4,
+"ENG1010": 3,
+"BIO1500": 4
+}
+
+
+weekly_temps = dict(
+Monday=72,
+Tuesday=75,
+Wednesday=70,
+Thursday=68,
+Friday=74,
+Saturday=78,
+Sunday=76
+)
+
+
+
+
+pet = {"name": "Buddy", "type": "dog", "age": 3}
+print("Pet name:", pet["name"])
+print("Pet age:", pet["age"])
+
+
+
+color = pet.get("color", "unknown")
+print("Pet color:", color)
+grades = {
+"Max": "Pass",
+"Sarah": "Fail",
+"John": "Pass"
+}
+student = "Max"
+if grades.get(student) == "Pass":
+print(student, "passed the course.")
+else:
+print(student, "did not pass the course.")
+
+
+
+
+products = {"laptop": 999.99, "mouse": 29.99, "keyboard": 79.99}
+product_name = "mouse"
+price = products.get(product_name)
+if price is not None:
+print(f"{product_name}: ${price}")
+else:
+print("Product not available")
+product_name = "monitor"
+price = products.get(product_name)
+if price is not None:
+print(f"{product_name}: ${price}")
+else:
+print("Product not available")
+
+
+
+
+
+
+inventory = {}
+inventory["apples"] = 10
+inventory["bananas"] = 5
+inventory["oranges"] = 8
+print(inventory)
+
+
+
+
+scores = {"Team A": 45, "Team B": 38}
+scores["Team B"] = 52
+scores["Team C"] = 41
+team_a_score = scores.pop("Team A")
+print("Team A score:", team_a_score)
+print(scores)
+
+
+
+
+
+cart = {}
+cart["Milk"] = 3.99
+cart["Bread"] = 2.49
+cart["Eggs"] = 4.29
+cart["Bread"] = 2.99
+removed_item = cart.pop("Milk")
+print("Removed item price:", removed_item)
+print("Final cart:", cart)
+total_price = sum(cart.values())
+print("Total price:", total_price)
+
+
+
+
+#unit 2
+
+"student_name"
+[1, 2, 3] 
+100 
+{"a": 1} 
+frozenset({1,2}) 
+
+
+data = {"a": 1, "b": 2, "a": 3, "b": 4}
+print(data)
+print(len(data))
+{'a': 3, 'b': 4}
+2
+print(hash("Maximilian"))
+print(hash(100))
+-1234567890123456789
+100
+
+
+
+
+high_scores = {
+("Max", "Minecraft"): 1500,
+("Sarah", "Tetris"): 2200,
+("John", "Pac-Man"): 1800
+}
+score = high_scores[("Sarah", "Tetris")]
+print("Sarah's Tetris score:", score)
+
+import time
+numbers_list = list(range(100000))
+numbers_dict = {i: i for i in range(100000)}
+target = 99999
+start = time.perf_counter()
+target in numbers_list
+list_time = time.perf_counter() - start
+start = time.perf_counter()
+target in numbers_dict
+dict_time = time.perf_counter() - start
+print("List lookup time:", list_time)
+print("Dictionary lookup time:", dict_time)
+if dict_time < list_time:
+print("Dictionary lookup is faster by", list_time - dict_time, "seconds.")
+else:
+print("List lookup is faster by", dict_time - list_time, "seconds.")
+
+
+
+
+temps = {"Monday": 72, "Tuesday": 75, "Wednesday": 68}
+
+print(temps.keys())
+print(temps.values())
+print(len(temps))
+
+
+
+
+print("Highest temperature:", max(temps.values()))
+print("Lowest temperature:", min(temps.values()))
+if "Friday" in temps:
+print("Friday is in the dictionary.")
+else:
+print("Friday is not in the dictionary.")
+temps.setdefault("Thursday", 70)
+print(temps)
+days_view = temps.keys()
+print("Before adding new day:")
+print(days_view)
+temps["Friday"] = 74
+print("After adding new day:")
+print(days_view)
+
+
+
+
+import sys
+
+prices = {
+"laptop": 999,
+"phone": 699,
+"tablet": 449,
+"watch": 299
+}
+total_value = sum(prices.values())
+average_price = total_value / len(prices)
+print("Total value:", total_value)
+print("Average price:", average_price)
+most_expensive = max(prices, key=prices.get)
+least_expensive = min(prices, key=prices.get)
+print("Most expensive:", most_expensive, "-", prices[most_expensive])
+print("Least expensive:", least_expensive, "-", prices[least_expensive])
+keys_view = prices.keys()
+keys_list = list(prices.keys())
+print("Memory of keys view:", sys.getsizeof(keys_view), "bytes")
+print("Memory of keys list:", sys.getsizeof(keys_list), "bytes")
+prices.update({
+"headphones": 149,
+"monitor": 249,
+"camera": 599
+})
+print("All products:")
+for product, price in prices.items():
+print(product, ":", price)
+
+
+
+
+colors = {"apple": "red", "banana": "yellow", "grape": "purple"}
+for fruit, color in colors.items():
+print(f"The {fruit} is {color}")
+
+list(colors.items())
+
+
+
+
+prices = {"coffee": 4.50, "tea": 3.00, "juice": 5.25}
+for item, price in prices.items():
+total = price * 1.10
+print(f"{item}: ${price:.2f} + tax = ${total:.2f}")
+``
+count = 0
+for item, price in prices.items():
+if price > 4.00:
+count += 1
+print("Items over $4.00:", count)
+x = 10
+y = 20
+x, y = y, x
+print(x, y)
+nums = [1, 2, 3, 4, 5]
+first, *middle, last = nums
+print("First:", first)
+print("Middle:", middle)
+print("Last:", last)
+
+
+
+
+
+import time
+scores = {
+"Alice": 88,
+"Bob": 65,
+"Carol": 92,
+"Dave": 71,
+"Eve": 58
+}
+top_student = max(scores.items(), key=lambda item: item[1])
+print("Highest score:")
+print(top_student)
+passed = {}
+failed = {}
+for student, grade in scores.items():
+if grade >= 70:
+passed[student] = grade
+else:
+failed[student] = grade
+print("Passed:", passed)
+print("Failed:", failed)
+average = sum(scores.values()) / len(scores)
+deviations = {}
+for student, grade in scores.items():
+deviations[student] = grade - average
+print("Class average:", average)
+print("Deviations:", deviations)
+big_dict = {i: i for i in range(50000)}
+start = time.perf_counter()
+for key, value in big_dict.items():
+pass
+items_time = time.perf_counter() - start
+start = time.perf_counter()
+for key in big_dict.keys():
+value = big_dict[key]
+keys_time = time.perf_counter() - start
+print("items() time:", items_time)
+print("keys() lookup time:", keys_time)
+if items_time < keys_time:
+print("items() iteration is faster.")
+else:
+print("keys() iteration with lookup is faster.")
